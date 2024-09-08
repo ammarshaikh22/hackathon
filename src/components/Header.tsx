@@ -8,8 +8,8 @@ const Header = () => {
         <header className='text-center py-5 bg-[#1D1D20]'>
             <div className='max-w-[90%] mx-auto'>
                 <div className='flex justify-between items-center'>
-                    <h1 className='md:text-xl text-white'>AS Resume Builder</h1>
-                    <h2 className='text-white md:text-lg font-semibold'>Welcome {data.name ? data.name + ' ' + data.family : 'User'}</h2>
+                    <h1 className='md:text-xl text-white text-xs'>AS Resume Builder</h1>
+                    <h2 className='text-white md:text-lg font-semibold text-xs'>Welcome {data.name ? data.name + ' ' + data.family : 'User'}</h2>
                     <DownloadButton elementId="cv-template"/>
                 </div>
             </div>
