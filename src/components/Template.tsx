@@ -9,7 +9,7 @@ const Template = () => {
     const imageUrl = data.img || defaultImage;
     console.log(data)
     return (
-        <section id="cv-template" className=" mx-auto md:max-w-[50%]">
+        <section id="cv-template" className="p-8 mx-auto md:max-w-[50%]">
             <div className="grid grid-cols-3">
                 <div className="bg-blue-800 text-white p-4 rounded-l-md flex flex-col">
                     <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4">
