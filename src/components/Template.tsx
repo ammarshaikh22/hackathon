@@ -13,11 +13,13 @@ const Template = () => {
             <div></div>
             <div className="grid grid-cols-3">
                 <div className="bg-blue-800 text-white p-4 rounded-l-md flex flex-col">
-                    <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4">
+                    <div className="relative md:w-24 md:h-24 w-16 h-16 rounded-full overflow-hidden mb-4">
                         <Image
                             layout="fill"
                             src={imageUrl}
                             alt="Profile"
+                            className="object-cover"
+
                         />
                     </div>
                     <h2 className="text-lg font-semibold">{data.name} {data.family}</h2>
@@ -51,7 +53,7 @@ const Template = () => {
                             }
                         </ul>
                     </section>
-                    <section className="mb-6">
+                    <section className="mb-6 relative">
                         <h2 className="text-xl font-semibold text-gray-700 mb-2">Work Experience</h2>
                         <ul className="space-y-2 text-xs">
                             <li>
