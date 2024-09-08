@@ -1,4 +1,5 @@
-import html2pdf from 'html2pdf.js';
+import dynamic from 'next/dynamic';
+const html2pdf = dynamic(() => import('html2pdf.js'), { ssr: false })
 export const handleDownload = () => {
     if (typeof window !== 'undefined') { // Ensure this runs in a browser context
         const element = document.getElementById('cv-template');
