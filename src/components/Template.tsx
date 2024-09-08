@@ -58,11 +58,6 @@ const Template = () => {
                                 <p>- Developed front-end components using React and Next.js</p>
                                 <p>- Collaborated with backend teams to integrate APIs</p>
                             </li>
-                            <li>
-                                <strong>Web Developer Intern</strong> at ABC Agency (2019 - 2020)
-                                <p>- Assisted in building responsive websites using HTML, CSS, and JavaScript</p>
-                                <p>- Participated in design discussions and code reviews</p>
-                            </li>
                         </ul>
                     </section>
                 </div>

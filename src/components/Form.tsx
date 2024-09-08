@@ -113,6 +113,23 @@ const Form = () => {
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>
+                    <Accordion type="single" collapsible className="w-full">
+                        <AccordionItem value="item-3">
+                            <AccordionTrigger className='text-xl font-bold'>Skills</AccordionTrigger>
+                            <AccordionContent>
+                                <div className='w-full relative'>
+                                    <Label htmlFor="skills">Add Skills</Label>
+                                    <Input
+                                        type='text'
+                                        name='skill'
+                                        value={currentSkill}
+                                        onChange={handleSkillInputChange}
+                                        className='h-[50px]' />
+                                    <CheckCircleOutlineIcon className='text-green-500 absolute top-8 right-4 cursor-pointer' onClick={handleSkill} />
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
                 </div>
             </div>
         </section>
