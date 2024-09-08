@@ -9,9 +9,13 @@ import { FileUpload } from "@/components/ui/file-upload";
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { FormContext } from '@/components/FormContext';
+import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 const Form = () => {
     const [files, setFiles] = useState<File[]>([]);
-    const { data, setData, handleData } = useContext(FormContext);
+    const { data, setData, handleData, currentSkill, setCurrentSkill, handleSkill } = useContext(FormContext);
+    const handleSkillInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setCurrentSkill(e.target.value);
+    };
     const handleFileUpload = (uploadedFiles: File[]) => {
         setFiles(uploadedFiles);
         const fileUrl = URL.createObjectURL(uploadedFiles[0]);
@@ -19,7 +23,7 @@ const Form = () => {
     };
     console.log(files)
     return (
-        <section className='relative overflow-y-scroll h-[88vh] w-[50%]'>
+        <section className='relative overflow-y-scroll h-screen md:w-[50%]'>
             <div className='max-w-[90%] mx-auto'>
                 <h3 className='text-2xl mt-6 font-semibold'>Your Information</h3>
                 <div className='mt-10'>
@@ -64,13 +68,47 @@ const Form = () => {
                                 </div>
                                 <div className='flex gap-4 mb-6'>
                                     <div className='w-full'>
-                                        <Label htmlFor="post-code">Post code</Label>
+                                        <Label htmlFor="postalcode">Post code</Label>
                                         <Input type='number' name='postalcode' onChange={handleData} />
                                     </div>
                                     <div className='w-full'>
                                         <Label htmlFor="city">City</Label>
                                         <Input type='text' name='city' onChange={handleData} />
                                     </div>
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                    <Accordion type="single" collapsible className="w-full">
+                        <AccordionItem value="item-2">
+                            <AccordionTrigger className='text-xl font-bold'>Education</AccordionTrigger>
+                            <AccordionContent>
+                                <div className='flex items-center gap-2'>
+                                    <div className='w-full'>
+                                        <Label htmlFor="universityName">University Name</Label>
+                                        <Input type='text' name='universityName' onChange={handleData} />
+                                    </div>
+                                    <div className='w-full'>
+                                        <Label htmlFor="highSchool">High School</Label>
+                                        <Input type='text' name='highSchool' onChange={handleData} />
+                                    </div>
+                                </div>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                    <Accordion type="single" collapsible className="w-full">
+                        <AccordionItem value="item-3">
+                            <AccordionTrigger className='text-xl font-bold'>Skills</AccordionTrigger>
+                            <AccordionContent>
+                                <div className='w-full relative'>
+                                    <Label htmlFor="skills">Add Skills</Label>
+                                    <Input
+                                        type='text'
+                                        name='skill'
+                                        value={currentSkill}
+                                        onChange={handleSkillInputChange}
+                                        className='h-[50px]' />
+                                    <CheckCircleOutlineIcon className='text-green-500 absolute top-8 right-4 cursor-pointer' onClick={handleSkill} />
                                 </div>
                             </AccordionContent>
                         </AccordionItem>
