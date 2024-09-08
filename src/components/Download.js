@@ -4,7 +4,7 @@ export const handleDownload = () => {
     const element = document.getElementById('cv-template');
     const opt = {
         margin: 0,
-        filename: 'cv.pdf',
+        filename: 'YourCv.pdf',
         image: { type: 'jpeg', quality: 0.98 },
         html2canvas: { scale: 2 },
         jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' },

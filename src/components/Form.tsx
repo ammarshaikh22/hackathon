@@ -12,14 +12,14 @@ import { FormContext } from '@/components/FormContext';
 const Form = () => {
     const [files, setFiles] = useState<File[]>([]);
     const { data, setData, handleData } = useContext(FormContext);
-    const handleFileUpload = (files: File[]) => {
-        setFiles(files);
-        setData({ ...data, img: files[0].name });
+    const handleFileUpload = (uploadedFiles: File[]) => {
+        setFiles(uploadedFiles);
+        const fileUrl = URL.createObjectURL(uploadedFiles[0]);
+        setData({ ...data, img: fileUrl });
     };
-    console.log(data)
     console.log(files)
     return (
-        <section className='relative overflow-scroll h-[88vh] w-[50%]'>
+        <section className='relative overflow-y-scroll h-[88vh] w-[50%]'>
             <div className='max-w-[90%] mx-auto'>
                 <h3 className='text-2xl mt-6 font-semibold'>Your Information</h3>
                 <div className='mt-10'>
