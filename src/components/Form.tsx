@@ -24,7 +24,7 @@ const Form = () => {
     console.log(files)
     return (
         <section className='relative overflow-y-scroll h-screen md:w-[50%]'>
-            <div className='max-w-[90%] mx-auto'>
+            <div className='md:max-w-[90%] mx-auto'>
                 <h3 className='text-2xl mt-6 font-semibold'>Your Information</h3>
                 <div className='mt-10'>
                     <Accordion type="single" collapsible className="w-full">
