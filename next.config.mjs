@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    images: {
-        //   domains:['example.com', 'anotherdomain.com']
-      },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        self: false
+      };
+    }
+    return config;
+  }
 };
 
 export default nextConfig;
