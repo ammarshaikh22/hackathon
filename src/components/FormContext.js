@@ -17,6 +17,9 @@ export const FormProvider = ({ children }) => {
     img: '',
     universityName: '',
     highSchool: '',
+    position: '',
+    companyName: '',
+    description:''
   });
 
   // State for skills array

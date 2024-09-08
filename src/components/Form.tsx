@@ -117,13 +117,24 @@ const Form = () => {
                         <AccordionItem value="item-4">
                             <AccordionTrigger className='text-xl font-bold'>Work Experience</AccordionTrigger>
                             <AccordionContent>
+                                <div className='flex items-center gap-2 mb-6'>
+                                    <div className='w-full'>
+                                        <Label htmlFor="position">Position</Label>
+                                        <Input type='text' name='position' onChange={handleData} />
+                                    </div>
+                                    <div className='w-full'>
+                                        <Label htmlFor="companyName">CompanyName</Label>
+                                        <Input type='text' name='companyName' onChange={handleData} />
+                                    </div>
+                                </div>
                                 <div className='w-full relative'>
                                     <Label htmlFor="description">Description</Label>
                                     <Input
                                         type='text'
                                         name='description'
-                                        className='h-[50px]' />
-                                    <CheckCircleOutlineIcon className='text-green-500 absolute top-8 right-4 cursor-pointer'  />
+                                        onChange={handleData}
+                                        className='h-[50px]'
+                                    />
                                 </div>
                             </AccordionContent>
                         </AccordionItem>

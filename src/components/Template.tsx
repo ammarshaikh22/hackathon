@@ -9,7 +9,7 @@ const Template = () => {
     const imageUrl = data.img || defaultImage;
     console.log(data)
     return (
-        <section id="cv-template" className="bg-white p-6 shadow-2xl rounded-md mx-auto md:max-w-[50%]">
+        <section id="cv-template" className=" mx-auto md:max-w-[50%]">
             <div className="grid grid-cols-3">
                 <div className="bg-blue-800 text-white p-4 rounded-l-md flex flex-col">
                     <div className="relative w-24 h-24 rounded-full overflow-hidden mb-4">
@@ -54,9 +54,8 @@ const Template = () => {
                         <h2 className="text-xl font-semibold text-gray-700 mb-2">Work Experience</h2>
                         <ul className="space-y-2 text-xs">
                             <li>
-                                <strong>Software Developer</strong> at XYZ Company (2020 - Present)
-                                <p>- Developed front-end components using React and Next.js</p>
-                                <p>- Collaborated with backend teams to integrate APIs</p>
+                                <strong>{data.position}</strong> {data.companyName}
+                                <p>- {data.description}</p>
                             </li>
                         </ul>
                     </section>
