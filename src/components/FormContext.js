@@ -4,7 +4,6 @@ import { createContext, useState } from 'react';
 export const FormContext = createContext();
 
 export const FormProvider = ({ children }) => {
-  // State for form data
   const [data, setData] = useState({
     name: '',
     family: '',
@@ -22,12 +21,8 @@ export const FormProvider = ({ children }) => {
     description:''
   });
 
-  // State for skills array
   const [skills, setSkills] = useState([]);
-  // State for the current skill input
   const [currentSkill, setCurrentSkill] = useState('');
-
-  // Handle form input changes
   const handleData = (e) => {
     const { name, value } = e.target;
     setData((prevData) => ({
@@ -36,11 +31,10 @@ export const FormProvider = ({ children }) => {
     }));
   };
 
-  // Handle skill addition
   const handleSkill = () => {
-    if (currentSkill.trim() === '') return; // Ensure skill is not empty
-    setSkills((prevSkills) => [...prevSkills, currentSkill]); // Add skill to the array
-    setCurrentSkill(''); // Clear the input after adding
+    if (currentSkill.trim() === '') return; 
+    setSkills((prevSkills) => [...prevSkills, currentSkill]); 
+    setCurrentSkill(''); 
   };
 
   return (
