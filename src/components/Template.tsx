@@ -9,28 +9,27 @@ const Template = () => {
     const imageUrl = data.img || defaultImage;
     console.log(data)
     return (
-        <section id="cv-template" className="p-8 mx-auto md:max-w-[40%]">
+        <section id="cv-template" className="mx-auto md:max-w-[40%] max-w-[90%] mt-10 md:mt-0">
             <div className="grid grid-cols-3">
-                <div className="bg-blue-800 text-white p-4 rounded-l-md flex flex-col">
-                    <div className="relative md:w-24 md:h-24 w-16 h-16 rounded-full overflow-hidden mb-4">
+                <div className="bg-[#1c485f] text-white p-4 rounded-l-md flex flex-col">
+                    <div className="relative md:w-28 md:h-28 w-16 h-16 rounded-full overflow-hidden mb-4">
                         <Image
                             layout="fill"
                             src={imageUrl}
                             alt="Profile"
-                            className="object-cover"
-
+                            className="object-cover object-center"
                         />
                     </div>
-                    <h2 className="text-lg font-semibold">{data.name} {data.family}</h2>
+                    <h2 className="md:text-lg font-semibold">{data.name} {data.family}</h2>
                     <p className="text-sm">{data.headline}</p>
-                    <div className="mt-4 flex flex-col gap-2">
-                        <h3 className="text-base font-bold">Contact</h3>
-                        <p className="text-xs overflow-hidden"><strong>Email:</strong> {data.email}</p>
-                        <p className="text-xs"><strong>Phone:</strong> {data.number}</p>
-                        <p className="text-xs"><strong>Address:</strong> {data.address} {data.city} {data.postalcode}</p>
+                    <div className="mt-4 flex flex-col gap-3">
+                        <h3 className="md:text-base font-bold">Contact</h3>
+                        <p className="text-xs overflow-clip"><strong>Email: </strong>{data.email}</p>
+                        <p className="text-xs"><strong>Phone: </strong>{data.number}</p>
+                        <p className="text-xs"><strong>Address: </strong>{data.address} {data.city} {data.postalcode}</p>
                     </div>
                 </div>
-                <div className="col-span-2 p-6 bg-gray-200 rounded-r-md">
+                <div className="col-span-2 py-6 px-4 bg-[#d4e8f2] rounded-r-md">
                     <header className="mb-4">
                         <h1 className="text-2xl font-bold text-gray-800">{data.name} {data.family}</h1>
                         <p className="text-gray-600">{data.headline}</p>
