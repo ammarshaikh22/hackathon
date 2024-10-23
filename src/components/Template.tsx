@@ -8,7 +8,7 @@ const Template = () => {
     const defaultImage = '/default-avatar.png';
     const imageUrl = data.img || defaultImage;
     return (
-        <section id="cv-template" className="mx-auto md:max-w-[40%] max-w-[90%] mt-10 md:mt-0">
+        <section id="cv-template" className="mx-auto md:max-w-[44%] max-w-[90%] mt-10 md:mt-0">
             <div className="grid grid-cols-3">
                 <div className="bg-[#1c485f] text-white p-4 rounded-l-md flex flex-col">
                     <div className="relative md:w-28 md:h-28 w-16 h-16 rounded-full overflow-hidden mb-4">
