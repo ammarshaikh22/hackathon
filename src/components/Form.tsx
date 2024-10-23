@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useContext, useState } from 'react'
 import {
     Accordion,
@@ -21,12 +22,11 @@ const Form = () => {
         const fileUrl = URL.createObjectURL(uploadedFiles[0]);
         setData({ ...data, img: fileUrl });
     };
-    console.log(files)
     return (
-        <section className='relative overflow-y-scroll h-screen md:w-[50%]'>
-            <div className='md:max-w-[90%] max-w-[96%] mx-auto'>
+        <section className='relative md:overflow-y-scroll md:h-screen md:w-[50%]'>
+            <div className='max-w-[90%]  mx-auto'>
                 <h3 className='text-2xl mt-6 font-semibold'>Your Information</h3>
-                <div className='mt-10'>
+                <div className='md:mt-10 mt-6'>
                     <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="item-1">
                             <AccordionTrigger className='text-xl font-bold'>Personal Information</AccordionTrigger>
