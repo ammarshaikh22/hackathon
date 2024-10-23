@@ -25,8 +25,8 @@ const Form = () => {
     return (
         <section className='relative md:overflow-y-scroll md:h-screen md:w-[50%]'>
             <div className='max-w-[90%]  mx-auto'>
-                <h3 className='text-2xl mt-6 font-semibold'>Your Information</h3>
-                <div className='md:mt-10 mt-6'>
+                <h3 className='text-2xl font-semibold'>Your Information</h3>
+                <div className=' mt-6'>
                     <Accordion type="single" collapsible className="w-full">
                         <AccordionItem value="item-1">
                             <AccordionTrigger className='text-xl font-bold'>Personal Information</AccordionTrigger>

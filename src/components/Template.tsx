@@ -7,7 +7,6 @@ const Template = () => {
     const { data, skills } = useContext(FormContext);
     const defaultImage = '/default-avatar.png';
     const imageUrl = data.img || defaultImage;
-    console.log(data)
     return (
         <section id="cv-template" className="mx-auto md:max-w-[40%] max-w-[90%] mt-10 md:mt-0">
             <div className="grid grid-cols-3">
