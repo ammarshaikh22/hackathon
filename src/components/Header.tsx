@@ -5,7 +5,7 @@ import DownloadButton from './DownloadButton';
 const Header = () => {
     const { data } = useContext(FormContext);
     return (
-        <header className='text-center py-5 bg-[#1D1D20]'>
+        <header className='text-center py-5 bg-black'>
             <div className='max-w-[90%] mx-auto'>
                 <div className='flex justify-between items-center'>
                     <h1 className='md:text-xl text-white text-lg'>AS Resume Builder</h1>

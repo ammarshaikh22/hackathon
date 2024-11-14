@@ -66,7 +66,7 @@ export const FileUpload = ({
           className="hidden"
         />
         <div className="flex flex-col items-center justify-center">
-          <p className="relative z-20 font-sans font-bold text-neutral-700 dark:text-neutral-300 text-base">
+          <p className="relative z-20 font-sans font-bold text-white dark:text-neutral-300 text-base">
             Your Photo
           </p>
           <div className="relative w-full mt-1 min-w-xl mx-auto">

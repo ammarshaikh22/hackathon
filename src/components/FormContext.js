@@ -14,15 +14,19 @@ export const FormProvider = ({ children }) => {
     city: '',
     postalcode: '',
     img: '',
-    universityName: '',
-    highSchool: '',
     position: '',
     companyName: '',
-    description:''
+    description: '',
+    about: ''
   });
-
-  const [skills, setSkills] = useState([]);
-  const [currentSkill, setCurrentSkill] = useState('');
+  const [userSkillsData, setUserSkillsData] = useState([]);
+  const [skills, setSkills] = useState('');
+  const [percent, setPercent] = useState('');
+  const [languages, setLanguages] = useState([]);
+  const [currentLanguage, setCurrentLanguage] = useState('');
+  const [UserEducation, setUserEducation] = useState('');
+  const [UserDegree, setUserDegree] = useState('');
+  const [User, setUser] = useState([]);
   const handleData = (e) => {
     const { name, value } = e.target;
     setData((prevData) => ({
@@ -30,24 +34,55 @@ export const FormProvider = ({ children }) => {
       [name]: value,
     }));
   };
-
-  const handleSkill = () => {
-    if (currentSkill.trim() === '') return; 
-    setSkills((prevSkills) => [...prevSkills, currentSkill]); 
-    setCurrentSkill(''); 
+  const handleLanguage = () => {
+    if (currentLanguage.trim() === '') return;
+    setLanguages((preLanguage) => [...preLanguage, currentLanguage]);
+    setCurrentLanguage('');
   };
-
+  const handleUserEducation = (e) => {
+    setUser((prevUser) => [
+      ...prevUser,
+      {
+        UserEducation: UserEducation,
+        UserDegree: UserDegree,
+      },
+    ]);
+    setUserDegree('')
+    setUserEducation('')
+  }
+  const handleUserSkillData = () => {
+    setUserSkillsData((userSkillsData) => [
+      ...userSkillsData,
+      {
+        skills: skills,
+        percent: percent,
+      },
+    ])
+    setSkills('')
+    setPercent('')
+  }
   return (
     <FormContext.Provider
       value={{
+        setPercent,
+        handleUserSkillData,
+        userSkillsData,
+        skills,
+        percent,
+        setSkills,
         data,
         setData,
         handleData,
-        skills,
-        setSkills,
-        currentSkill,
-        setCurrentSkill,
-        handleSkill,
+        handleUserEducation,
+        setUserDegree,
+        setUserEducation,
+        setCurrentLanguage,
+        currentLanguage,
+        User,
+        languages,
+        UserDegree,
+        UserEducation,
+        handleLanguage,
       }}
     >
       {children}

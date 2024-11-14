@@ -65,3 +65,19 @@
   }
 }
 
+
+/* Add this CSS to show only the #cv-template section during printing */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #cv-template, #cv-template * {
+    visibility: visible;
+  }
+  #cv-template {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+}
