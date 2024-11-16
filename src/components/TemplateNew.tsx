@@ -45,7 +45,7 @@ const TemplateNew = () => {
                         {
                             User.length > 0 ? User.map((user: any, index: any) => (
                                 <div className="mb-4 w-full break-words" key={index}>
-                                    <h3 className="font-bold text-gray-700">{user.UserEducation}</h3>
+                                    <h3 className="font-bold text-gray-700">{user.UserEducation.toUpperCase()}</h3>
                                     <p className="text-sm text-gray-500">{user.UserDegree}</p>
                                 </div>
                             )) : <div className="mb-4 w-full break-words" >
@@ -66,8 +66,8 @@ const TemplateNew = () => {
                         {/* <!-- Experience Section --> */}
                         <h2 className=" font-bold text-lg mb-4 bg-blue-950 text-white px-2 w-full py-1">Experience</h2>
                         <div className="mb-4 w-full break-words">
-                            <h3 className="font-bold text-gray-700">{data.position ? data.position : 'Software Engineer'}</h3>
-                            <p className="text-sm text-gray-500">{data.companyName ? data.companyName : 'Google'}</p>
+                            <h3 className="font-bold text-gray-700">{data.position ? data.position.toUpperCase() : 'Software Engineer'}</h3>
+                            <p className="text-sm text-gray-500">{data.companyName ? data.companyName.toUpperCase() : 'Google'}</p>
                             <p className="text-sm text-gray-600">{data.description ? data.description : 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}</p>
                         </div>
                         {/* <!-- Skills Summary Section --> */}
@@ -77,7 +77,7 @@ const TemplateNew = () => {
                                 userSkillsData.length > 0 ? userSkillsData.map((skill: any, index: any) => (
                                     <div key={index}>
                                         <div className="flex items-center justify-between">
-                                            <span className="text-sm font-semibold text-gray-600">{skill.skills}</span>
+                                            <span className="text-sm font-semibold text-gray-600">{skill.skills.toUpperCase()}</span>
                                             <span className="text-sm font-semibold text-gray-600">{skill.percent}%</span>
                                         </div>
                                         <div className="w-full bg-gray-200 rounded-full h-2.5 mb-4 mt-2">
